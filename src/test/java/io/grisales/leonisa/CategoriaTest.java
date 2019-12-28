@@ -5,7 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class CategoriaTest {
-    Categoria ct;
+     private Categoria ct;
 
     @Before
     public void SetUp(){

@@ -1,5 +1,5 @@
 package io.grisales.leonisa;
 
 public interface ProntoPagable {
-    public double descProntoPago(int prontoPago);
+    public int descProntoPago(int prontoPago);
 }
