@@ -3,11 +3,16 @@ package io.grisales.leonisa;
 import java.util.ArrayList;
 
 public class Pedido {
-    private int cantidadUnidad;
+    private int cantidadLeonisa;
+    private int cantidadLeo;
+    private int cantidadTeen;
     private String medioPago;
     private int descuento;
     private int prontoPago;
     private ArrayList<Producto> productos = new ArrayList<Producto>();
+    private double totalLeonisa = 0;
+    private double totalLeo = 0;
+    private double totalTeen = 0;
 
     public Pedido(){}
 
@@ -28,7 +33,24 @@ public class Pedido {
             }
         }
         return null;
+
     }
 
+    public void totalCategoria(){
 
+        for(Producto pd: productos){
+            if(pd instanceof Leonisa){
+                cantidadLeonisa++;
+                totalLeonisa += pd.getPrecio();
+            }
+            if(pd instanceof Leo){
+                cantidadLeo++;
+                totalLeo += pd.getPrecio();
+            }
+            if(pd instanceof Teen){
+                cantidadTeen++;
+                totalTeen += pd.getPrecio();
+            }
+        }
+    }
 }
