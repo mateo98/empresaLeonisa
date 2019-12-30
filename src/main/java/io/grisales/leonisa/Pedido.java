@@ -13,6 +13,9 @@ public class Pedido {
     private double totalLeonisa = 0;
     private double totalLeo = 0;
     private double totalTeen = 0;
+    private int descLeonisa;
+    private int descLeo;
+    private int descTeen;
 
     public Pedido(){}
 
@@ -53,4 +56,30 @@ public class Pedido {
             }
         }
     }
+
+    public int getCantidadLeonisa() {
+        return cantidadLeonisa;
+    }
+
+    public int getCantidadLeo() {
+        return cantidadLeo;
+    }
+
+    public int getCantidadTeen() {
+        return cantidadTeen;
+    }
+
+    public double getTotalLeonisa() {
+        return totalLeonisa;
+    }
+
+    public double getTotalLeo() {
+        return totalLeo;
+    }
+
+    public double getTotalTeen() {
+        return totalTeen;
+    }
+
+
 }

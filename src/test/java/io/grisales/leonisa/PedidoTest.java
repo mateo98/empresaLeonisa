@@ -23,18 +23,75 @@ public class PedidoTest {
 
     @Test
     public void asignarProducto() {
-        Assert.assertNull("No se creo el objeto", pe.buscarProducto(leonisa.getCiu()));
+        pe.asignarProducto(leonisa);
+        Assert.assertNotNull("No se creo el objeto", pe.buscarProducto(leonisa.getCiu()));
     }
 
     @Test
     public void testAsignarProducto() {
-        Assert.assertNull("No se creo el objeto", pe.buscarProducto(leo.getCiu()));
+        pe.asignarProducto(leo);
+        Assert.assertNotNull("No se creo el objeto", pe.buscarProducto(leo.getCiu()));
     }
 
     @Test
     public void testAsignarProducto1() {
-        Assert.assertNull("No se creo el objeto", pe.buscarProducto(teen.getCiu()));
+        pe.asignarProducto(teen);
+        Assert.assertNotNull("No se creo el objeto", pe.buscarProducto(teen.getCiu()));
     }
 
 
+    @Test
+    public void totalCategoria() {
+        pe.asignarProducto(leo);
+        pe.asignarProducto(leonisa);
+        pe.asignarProducto(teen);
+        pe.totalCategoria();
+        Assert.assertEquals("No es el mismo resultado", 2000, pe.getTotalLeonisa(),0);
+    }
+    @Test
+    public void totalCategoria1() {
+        pe.asignarProducto(leo);
+        pe.asignarProducto(leonisa);
+        pe.asignarProducto(teen);
+        pe.totalCategoria();
+        Assert.assertEquals("No es el mismo resultado", 2000, pe.getTotalLeo(),0);
+    }
+    @Test
+    public void totalCategoria2() {
+        pe.asignarProducto(leo);
+        pe.asignarProducto(leonisa);
+        pe.asignarProducto(teen);
+        pe.totalCategoria();
+        Assert.assertEquals("No es el mismo resultado", 2000, pe.getTotalTeen(), 0);
+    }
+
+    @Test
+    public void getCantidadLeonisa() {
+        Assert.assertEquals("No es el mismo resultado", 0, pe.getCantidadLeonisa());
+    }
+
+    @Test
+    public void getCantidadLeo() {
+        Assert.assertEquals("No es el mismo resultado", 0, pe.getCantidadLeo());
+    }
+
+    @Test
+    public void getCantidadTeen() {
+        Assert.assertEquals("No es el mismo resultado", 0, pe.getCantidadTeen());
+    }
+
+    @Test
+    public void getTotalLeonisa() {
+        Assert.assertEquals("No es el mismo resultado", 0, pe.getTotalLeonisa(),0);
+    }
+
+    @Test
+    public void getTotalLeo() {
+        Assert.assertEquals("No es el mismo resultado", 0, pe.getTotalLeo(),0);
+    }
+
+    @Test
+    public void getTotalTeen() {
+        Assert.assertEquals("No es el mismo resultado", 0, pe.getTotalTeen(),0);
+    }
 }
