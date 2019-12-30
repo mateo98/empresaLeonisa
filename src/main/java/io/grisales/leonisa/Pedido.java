@@ -7,7 +7,6 @@ public class Pedido {
     private int cantidadLeo;
     private int cantidadTeen;
     private String medioPago;
-    private int descuento;
     private int prontoPago;
     private ArrayList<Producto> productos = new ArrayList<Producto>();
     private double totalLeonisa = 0;
@@ -17,7 +16,10 @@ public class Pedido {
     private int descLeo;
     private int descTeen;
 
-    public Pedido(){}
+    public Pedido(int prontoPago, String medioPago){
+        this.prontoPago = prontoPago;
+        this.medioPago = medioPago;
+    }
 
     public void asignarProducto(Leonisa leonisa){
         productos.add(leonisa);
@@ -81,5 +83,24 @@ public class Pedido {
         return totalTeen;
     }
 
+    public void asignarDescuentos(){
+        Leonisa descLeonisa = new Leonisa();
+        Leo descLeo = new Leo();
+        Teen descTeen = new Teen();
+        this.descLeonisa = descLeonisa.descProntoPago(prontoPago);
+        this.descLeo = descLeo.descProntoPago(prontoPago)+  descLeo.descPagoEfectivo(cantidadLeo, medioPago);
+        this.descTeen = descTeen.descPagoEfectivo(cantidadTeen,medioPago);
+    }
 
+    public int getDescLeonisa() {
+        return descLeonisa;
+    }
+
+    public int getDescLeo() {
+        return descLeo;
+    }
+
+    public int getDescTeen() {
+        return descTeen;
+    }
 }

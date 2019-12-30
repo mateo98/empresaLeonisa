@@ -5,6 +5,8 @@ public class Producto {
     private int precio;
     private Categoria ct;
 
+    public Producto(){}
+
     public Producto(String ciu, int precio, String tipoPrenda, String talla, String color, String material){
         ct = new Categoria(tipoPrenda, talla, color, material);
         this.ciu = ciu;

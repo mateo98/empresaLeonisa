@@ -15,7 +15,7 @@ public class PedidoTest {
 
     @Before
     public void setUp() throws Exception {
-        pe = new Pedido();
+        pe = new Pedido(13, "TC");
         leonisa = new Leonisa("FF", 2000, "bra", "32c", "negro", "encaje");
         leo = new Leo("AF", 2000, "bra", "32c", "negro", "encaje");
         teen = new Teen("EF", 2000, "bra", "32c", "negro", "encaje");
@@ -93,5 +93,35 @@ public class PedidoTest {
     @Test
     public void getTotalTeen() {
         Assert.assertEquals("No es el mismo resultado", 0, pe.getTotalTeen(),0);
+    }
+
+    @Test
+    public void asignarDescuentos() {
+        pe.asignarDescuentos();
+        Assert.assertEquals("No es el mismo resultado", 0, pe.getDescLeo());
+    }
+    @Test
+    public void asignarDescuentos2() {
+        pe.asignarDescuentos();
+        Assert.assertEquals("No es el mismo resultado", 0, pe.getDescLeonisa());
+    }    @Test
+    public void asignarDescuentos3() {
+        pe.asignarDescuentos();
+        Assert.assertEquals("No es el mismo resultado", 0, pe.getDescTeen());
+    }
+
+    @Test
+    public void getDescLeonisa() {
+        Assert.assertEquals("No es el mismo resultado", 0, pe.getDescLeonisa());
+    }
+
+    @Test
+    public void getDescLeo() {
+        Assert.assertEquals("No es el mismo resultado", 0, pe.getDescLeo());
+    }
+
+    @Test
+    public void getDescTeen() {
+        Assert.assertEquals("No es el mismo resultado", 0, pe.getDescTeen());
     }
 }
